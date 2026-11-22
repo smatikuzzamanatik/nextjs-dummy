@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 বাজার দর (BazarDor)
 
-## Getting Started
+> প্রয়োজনীয় নিত্যপণ্যের বাজারদর ও বাজারভিত্তিক তুলনামূলক দাম এক নজরে।
 
-First, run the development server:
+**বাজার দর** একটি আধুনিক ও রেসপনসিভ ওয়েব অ্যাপ্লিকেশন যা বাংলাদেশের বিভিন্ন বিভাগের শীর্ষ বাজারগুলোর নিত্যপ্রয়োজনীয় পণ্যের (চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম-দুধ ও মসলা) দৈনন্দিন দাম, ওঠানামা এবং বাজারভিত্তিক গড়, সর্বনিম্ন ও সর্বাধিক মূল্য প্রদর্শন করে।
 
+---
+
+## 🚀 লাইভ ডেমো ও রিপোজিটরি (Links)
+
+- **Live Demo:** [https://bazar-dor-eight-alpha.vercel.app/](https://bazar-dor-eight-alpha.vercel.app/)
+- **GitHub Repository:** [https://github.com/shakib/BazarDor](https://github.com/shakib/BazarDor)
+
+---
+
+## 🛠️ ব্যবহৃত প্রযুক্তিসমূহ (Technologies Used)
+
+| প্রযুক্তি (Technology) | বিবরণ (Purpose) |
+|---|---|
+| **Next.js 16 (App Router)** | সার্ভার কম্পোনেন্টস ও হাইব্রিড রাউটিং ফ্রেমওয়ার্ক |
+| **React 19** | লেটেস্ট রিঅ্যাক্ট লাইব্রেরি ও কম্পোনেন্ট আর্কিটেকচার |
+| **Tailwind CSS v4** | আধুনিক ইউটিলিটি-ফার্স্ট ও সিএসএস ডিজাইন টোকেন |
+| **shadcn/ui** | এক্সেসিবল ও কাস্টমাইজড UI কম্পোনেন্টস (Radix UI ও Base UI ভিত্তিক) |
+| **Better Auth** | মডার্ন, টাইপ-সেফ ও সিকিউর অথেনটিকেশন সিস্টেম |
+| **MongoDB Atlas** | ক্লাউড ডাটাবেস পারসিস্টেন্স (`@better-auth/mongo-adapter`) |
+| **Sonner** | টোস্ট নোটিফিকেশন ও ইউজার ফিডব্যাক |
+| **TypeScript** | ১০০% টাইপ সেফটি ও নির্ভরযোগ্য কোডবেস |
+
+---
+
+## ✨ প্রধান ৫টি ফিচার (5 Key Features)
+
+### ১. লাইভ প্রাইস ট্র্যাকার ও ট্রেন্ড সেকশন (Live Price Ticker & Daily Trends)
+- অ্যাপের শীর্ষে স্বয়ংক্রিয় ইনফিনিট স্ক্রলিং মার্কি স্ট্রিপ, যা বিভিন্ন পণ্যের বর্তমান বাজারমূল্য এবং শতকরা পরিবর্তন প্রদর্শন করে।
+- হোমপেজে আজকের দিনে সর্বাধিক **দাম বেড়েছে (Top Risers)** এবং **দাম কমেছে (Top Fallers)** এমন শীর্ষ ৬টি পণ্য বিশেষ হাইলাইট সহ প্রদর্শিত হয়।
+
+### ২. বাংলা সংখ্যাভিত্তিক সঠিক সর্টিং ফিল্টার (Bengali Numeric Sorting)
+- ক্যাটাগরি পেজে পণ্যের তালিকা ডিফল্ট ছাড়াও **"দাম: কম থেকে বেশি"** এবং **"দাম: বেশি থেকে কম"** অনুযায়ী তাৎক্ষণিক সাজানো যায়।
+- বাংলা ডিজিটের স্ট্রিং তুলনা না করে প্রকৃত সাংখ্যিক মূল্যের ভিত্তিতে সঠিক সর্টিং কাজ করে।
+
+### ৩. প্রটেক্টেড প্রোডাক্ট ডিটেইলস ও বাজারভিত্তিক তুলনামূলক টেবিল (Protected Details & Market Breakdown)
+- পণ্যভিত্তিক বিস্তারিত পাতা শুধুমাত্র লগইন করা ইউজারদের জন্য উন্মুক্ত। সাইন ইন না থাকলে স্বয়ংক্রিয়ভাবে নোটিফিকেশন সহ সাইন ইন পাতায় রিডাইরেক্ট করে।
+- প্রতিটি পণ্যের ক্ষেত্রে বিভাগভিত্তিক বাজারগুলোর (যেমন কারওয়ান বাজার, গ্রীন মার্কেট, সদরমহল ইত্যাদি) **সর্বনিম্ন, সর্বাধিক ও গড় দামের** টেবিল এবং সারসংক্ষেপ কার্ড প্রদর্শিত হয়।
+
+### ৪. ক্লাউড বেটার-অথ ও প্রোফাইল আপডেট (Better Auth with Cloud MongoDB Atlas)
+- ইমেইল/পাসওয়ার্ড দিয়ে সম্পূর্ণ সিকিউর সাইন আপ ও সাইন ইন সুবিধা।
+- গুগল ও গিটহাব সোশ্যাল লগইন বাটন সাপোর্ট।
+- নিজস্ব প্রোফাইল ড্যাশবোর্ড থেকে ইউজারের তথ্য (যেমন: নাম) আপডেট করার সুযোগ (Better Auth `updateUser` API চালিত)।
+
+### ৫. রেসপনসিভ ও এক্সেসিবল ডিজাইন (Fully Responsive & Accessible)
+- মোবাইল, ট্যাবলেট এবং ডেস্কটপ সব ডিভাইসে নিখুঁত গ্রিড ভিউ।
+- ডার্ক ও লাইট মোড কালার কন্ট্রাস্ট এবং কীবোর্ড ন্যাভিগেশন ফ্রেন্ডলি স্ক্রিন-রিডার সাপোর্ট।
+- ক্যাটাগরি বা পণ্যে ভুল ইউআরএলে গেলে বন্ধুত্বপূর্ণ **৪০৪ পেজ** এবং দ্রুত লোডিং স্কেলিটন।
+
+---
+
+## 💻 লোকাল ডেভেলপমেন্ট সেটআপ (Local Setup)
+
+### ১. রিপোজিটরি ক্লোন করুন:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/shakib/BazarDor.git
+cd BazarDor
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### ২. ডিপেন্ডেন্সি ইনস্টল করুন:
+```bash
+pnpm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ৩. এনভায়রনমেন্ট ভেরিয়েবল (.env.local):
+প্রজেক্টের রুট ডিরেক্টরিতে `.env.local` ফাইলে নিচের তথ্যগুলো প্রদান করুন:
+```env
+MONGODB_URI=your_mongodb_connection_uri
+BETTER_AUTH_SECRET=your_secret_key_here
+BETTER_AUTH_URL=http://localhost:3333
+NEXT_PUBLIC_APP_URL=http://localhost:3333
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### ৪. ডেভেলপমেন্ট সার্ভার চালু করুন:
+```bash
+pnpm dev
+# অথবা make dev
+```
+ব্রাউজারে [http://localhost:3333](http://localhost:3333) লিঙ্কে প্রবেশ করলেই বাজার দর অ্যাপ্লিকেশনটি দেখতে পাবেন।
 
-## Learn More
+### ৫. প্রোডাকশন বিল্ড যাচাই:
+```bash
+pnpm build
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 লাইসেন্স
+এই প্রজেক্টটি শিক্ষামূলক উদ্দেশ্যে মুক্তভাবে ব্যবহারের জন্য উন্মুক্ত।
